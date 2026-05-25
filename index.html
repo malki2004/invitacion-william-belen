@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Invitación de boda de William Paredes y Belen Toasa" />
+  <title>Invitación William & Belen</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="intro-active">
+  <audio id="bgMusic" src="assets/musica.mp3" loop preload="auto"></audio>
+
+  <!-- Pantalla inicial con transición de zoom hacia la portada -->
+  <section id="intro" class="intro-screen" aria-label="Abrir invitación">
+    <div class="intro-bg-glow"></div>
+    <div class="opening-zoom" aria-hidden="true"></div>
+
+    <div class="intro-card">
+      <p class="eyebrow">Invitación de boda</p>
+
+      <div id="envelope" class="envelope" aria-hidden="true">
+        <div class="envelope-back"></div>
+        <div class="letter">
+          <span class="letter-cross">✦</span>
+          <span class="letter-title">William & Belen</span>
+          <span class="letter-date">07 · 06 · 2026</span>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="envelope-flap"></div>
+        <div class="wax-seal">WB</div>
+      </div>
+
+      <h1 class="intro-names">William & Belen</h1>
+      <p class="intro-text">Con Dios en el centro de nuestro amor</p>
+
+      <button id="openInvitation" class="primary-button" type="button">
+        Abrir invitación
+      </button>
+
+      <p id="audioMessage" class="audio-message" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <button id="musicToggle" class="music-toggle hidden" type="button" aria-label="Pausar o reproducir música">
+    ♫
+  </button>
+
+  <!-- Hojas/pétalos discretos volando -->
+  <div class="petals" aria-hidden="true">
+    <!-- Pétalos blancos discretos -->
+    <span class="petal petal-white" style="--x:4%; --delay:0s; --duration:19s; --s:.72; --drift:44px;"></span>
+    <span class="petal petal-cream" style="--x:11%; --delay:2s; --duration:23s; --s:.58; --drift:-38px;"></span>
+    <span class="petal petal-white" style="--x:18%; --delay:5s; --duration:21s; --s:.66; --drift:54px;"></span>
+    <span class="petal petal-sage" style="--x:27%; --delay:1.3s; --duration:24s; --s:.52; --drift:-48px;"></span>
+    <span class="petal petal-white" style="--x:36%; --delay:3.4s; --duration:20s; --s:.75; --drift:36px;"></span>
+    <span class="petal petal-cream" style="--x:44%; --delay:6.2s; --duration:26s; --s:.60; --drift:-52px;"></span>
+    <span class="petal petal-white" style="--x:53%; --delay:1.8s; --duration:22s; --s:.70; --drift:48px;"></span>
+    <span class="petal petal-sage" style="--x:62%; --delay:4.5s; --duration:25s; --s:.54; --drift:-42px;"></span>
+    <span class="petal petal-white" style="--x:71%; --delay:.8s; --duration:21s; --s:.68; --drift:40px;"></span>
+    <span class="petal petal-cream" style="--x:80%; --delay:3s; --duration:24s; --s:.57; --drift:-46px;"></span>
+    <span class="petal petal-white" style="--x:89%; --delay:5.2s; --duration:22s; --s:.73; --drift:34px;"></span>
+    <span class="petal petal-sage" style="--x:96%; --delay:7s; --duration:27s; --s:.50; --drift:-38px;"></span>
+
+    <!-- Corazones pequeños y muy suaves -->
+    <span class="floating-heart" style="--x:14%; --delay:3s; --duration:18s; --s:.70;">♡</span>
+    <span class="floating-heart" style="--x:41%; --delay:7s; --duration:22s; --s:.58;">♡</span>
+    <span class="floating-heart" style="--x:69%; --delay:1s; --duration:20s; --s:.64;">♡</span>
+    <span class="floating-heart" style="--x:88%; --delay:5s; --duration:24s; --s:.52;">♡</span>
+  </div>
+
+  <main id="invitation" class="invitation hidden invitation-enter">
+    <a class="sticky-rsvp" href="#rsvp" aria-label="Ir a confirmar asistencia">
+      Confirmar asistencia
+    </a>
+
+    <!-- Portada principal -->
+    <section class="section hero reveal">
+      <div class="butterfly" aria-hidden="true">🦋</div>
+      <div class="ornament top"></div>
+
+      <p class="eyebrow">¡Estás invitado!</p>
+      <h2 class="couple-names">William & Belen</h2>
+      <p class="date-line">Domingo 7 de junio de 2026</p>
+
+      <div class="divider">
+        <span></span><i>✦</i><span></span>
+      </div>
+
+      <p class="hero-quote">
+        “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.”
+      </p>
+
+      <div class="scroll-hint">
+        <span>Desliza para ver más</span>
+        <b>⌄</b>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card">
+        <p class="section-kicker">Nuestra promesa</p>
+        <h2>¡El día ha llegado!</h2>
+        <p class="quote">
+          “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.
+          Acompáñanos a celebrar esta promesa eterna.”
+        </p>
+        <p class="soft-text">Gracias por su presencia.</p>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card">
+        <p class="section-kicker">Con la bendición de Dios</p>
+        <h2>Y de nuestros padres</h2>
+
+        <div class="parents-grid">
+          <div>
+            <h3>Padres de la novia</h3>
+            <p>Pedro Toasa Ganan<br>Manuela Ilvis Guamán</p>
+          </div>
+          <div>
+            <h3>Padres del novio</h3>
+            <p>Bernardo Paredes y Elena Yautibug</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card countdown-card">
+        <p class="section-kicker">Falta poco para nuestro gran día</p>
+        <h2>Cuenta regresiva</h2>
+
+        <div id="countdown" class="countdown" aria-live="polite">
+          <div><strong id="days">00</strong><span>Días</span></div>
+          <div><strong id="hours">00</strong><span>Horas</span></div>
+          <div><strong id="minutes">00</strong><span>Min.</span></div>
+          <div><strong id="seconds">00</strong><span>Seg.</span></div>
+        </div>
+
+        <p id="countdownMessage" class="soft-text"></p>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card location-card">
+        <p class="section-kicker">Ceremonia eclesiástica</p>
+        <h2>10:00 a. m.</h2>
+        <p class="place-name">Iglesia evangélica Bilingüe Getsemaní</p>
+        <p class="address">Manuel Albán y Baltazar García</p>
+
+        <a class="secondary-button" href="https://maps.app.goo.gl/R7EVHRWNjVnXe7Sq6?g_st=aw" target="_blank" rel="noopener">
+          Ver ubicación de la ceremonia
+        </a>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card location-card">
+        <p class="section-kicker">Recepción</p>
+        <h2>12:00 p. m.</h2>
+        <p class="place-name">Licán</p>
+        <p class="address">Calle Salasacas</p>
+
+        <a class="secondary-button" href="https://maps.app.goo.gl/kEKaYC4kXqoZ3oiV7?g_st=aw" target="_blank" rel="noopener">
+          Ver ubicación de la recepción
+        </a>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card">
+        <p class="section-kicker">Programa</p>
+        <h2>Itinerario</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="time">10:00 a. m.</span>
+            <p>Ceremonia eclesiástica</p>
+          </div>
+          <div class="timeline-item">
+            <span class="time">12:00 p. m.</span>
+            <p>Recepción</p>
+          </div>
+          <div class="timeline-item">
+            <span class="time">Después</span>
+            <p>Celebración y momentos especiales</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="rsvp" class="section reveal">
+      <article class="paper-card rsvp-card">
+        <p class="section-kicker">Confirmación</p>
+        <h2>Confirma tu asistencia</h2>
+        <p class="soft-text">
+          Puedes confirmar por WhatsApp o completar el formulario.
+        </p>
+
+        <form id="rsvpForm" class="rsvp-form">
+          <label for="guestName">Nombre del invitado</label>
+          <input id="guestName" name="guestName" type="text" placeholder="Escribe tu nombre" autocomplete="name" />
+
+          <label for="attendance">Asistencia</label>
+          <select id="attendance" name="attendance">
+            <option value="si">Sí asistiré</option>
+            <option value="no">No podré asistir</option>
+          </select>
+
+          <button id="whatsappButton" class="primary-button full" type="button">
+            Confirmar por WhatsApp
+          </button>
+        </form>
+
+        <a class="secondary-button full" href="https://docs.google.com/forms/d/e/1FAIpQLSc_BNe9yZtIQoZorNMut1ovaWelG_Pg1zuAOzVHahkxKIkb1Q/viewform?usp=header" target="_blank" rel="noopener">
+          Confirmar en formulario
+        </a>
+      </article>
+    </section>
+
+    <section class="section reveal">
+      <article class="paper-card calendar-card">
+        <p class="section-kicker">Guarda la fecha</p>
+        <h2>Agendar evento</h2>
+        <p class="soft-text">
+          Agrega la boda a tu calendario para no olvidar este momento especial.
+        </p>
+
+        <a id="calendarButton" class="primary-button full" href="#" target="_blank" rel="noopener">
+          Agendar en Google Calendar
+        </a>
+
+        <a class="secondary-button full calendar-alt" href="assets/boda-william-belen.ics" download>
+          Descargar evento para calendario
+        </a>
+      </article>
+    </section>
+
+    <section class="section final-section reveal">
+      <article class="paper-card final-card">
+        <p class="section-kicker">Con mucho cariño</p>
+        <h2 class="couple-names small">William & Belen</h2>
+        <p class="quote">Esperamos compartir este momento contigo.</p>
+        <p class="soft-text">William Paredes y Belen Toasa</p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
