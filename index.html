@@ -6,7 +6,6 @@
   <meta name="description" content="Invitación de boda de William Paredes y Belen Toasa" />
   <title>Invitación William & Belen</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -17,92 +16,114 @@
 <body class="intro-active">
   <audio id="bgMusic" src="assets/musica.mp3" loop preload="auto"></audio>
 
-  <!-- Pantalla inicial con transición de zoom hacia la portada -->
+  <!-- Entrada con animación sincronizada y sobre minimalista -->
   <section id="intro" class="intro-screen" aria-label="Abrir invitación">
-    <div class="intro-bg-glow"></div>
-    <div class="opening-zoom" aria-hidden="true"></div>
+    <div class="intro-hero-preview" aria-hidden="true"></div>
+    <div class="opening-blur" aria-hidden="true"></div>
+    <div class="opening-light" aria-hidden="true"></div>
 
-    <div class="intro-card">
-      <p class="eyebrow">Invitación de boda</p>
+    <div class="premium-envelope" aria-hidden="true">
+      <div class="envelope-panel panel-back"></div>
+      <div class="envelope-flap flap-left"></div>
+      <div class="envelope-flap flap-right"></div>
+      <div class="envelope-flap flap-bottom"></div>
+      <div class="envelope-flap flap-top"></div>
 
-      <div id="envelope" class="envelope" aria-hidden="true">
-        <div class="envelope-back"></div>
-        <div class="letter">
-          <span class="letter-cross">✦</span>
-          <span class="letter-title">William & Belen</span>
-          <span class="letter-date">07 · 06 · 2026</span>
-        </div>
-        <div class="envelope-front"></div>
-        <div class="envelope-flap"></div>
-        <div class="wax-seal">WB</div>
-      </div>
-
-      <h1 class="intro-names">William & Belen</h1>
-      <p class="intro-text">Con Dios en el centro de nuestro amor</p>
-
-      <button id="openInvitation" class="primary-button" type="button">
-        Abrir invitación
-      </button>
-
-      <p id="audioMessage" class="audio-message" role="status" aria-live="polite"></p>
+      <div class="reveal-window"></div>
+      <div class="invite-script">Estás invitado</div>
+      <div class="date-mark">07 · 06 · 2026</div>
     </div>
+
+    <!-- Botón con la instrucción en español -->
+    <button id="openInvitation" class="wax-button" type="button" aria-label="Abrir invitación">
+      <span>WB</span>
+      <small>Presiona el sello rojo</small>
+    </button>
+
+    <div class="camera-fold" aria-hidden="true"></div>
+
+    <div class="opening-petals" aria-hidden="true">
+      <span style="--a:-165deg; --d:145px; --delay:.10s; --s:.70;"></span>
+      <span style="--a:-138deg; --d:120px; --delay:.22s; --s:.54;"></span>
+      <span style="--a:-112deg; --d:164px; --delay:.14s; --s:.78;"></span>
+      <span style="--a:-84deg; --d:135px; --delay:.30s; --s:.60;"></span>
+      <span style="--a:-58deg; --d:172px; --delay:.18s; --s:.72;"></span>
+      <span style="--a:-31deg; --d:126px; --delay:.34s; --s:.56;"></span>
+      <span style="--a:-7deg; --d:154px; --delay:.24s; --s:.68;"></span>
+      <span style="--a:18deg; --d:140px; --delay:.16s; --s:.62;"></span>
+      <span style="--a:46deg; --d:176px; --delay:.26s; --s:.76;"></span>
+      <span style="--a:72deg; --d:128px; --delay:.36s; --s:.58;"></span>
+      <span style="--a:102deg; --d:158px; --delay:.20s; --s:.70;"></span>
+      <span style="--a:132deg; --d:136px; --delay:.32s; --s:.57;"></span>
+      <span style="--a:160deg; --d:168px; --delay:.12s; --s:.74;"></span>
+      <i style="--a:-132deg; --d:112px; --delay:.42s;">♡</i>
+      <i style="--a:-18deg; --d:118px; --delay:.48s;">♡</i>
+      <i style="--a:51deg; --d:112px; --delay:.44s;">♡</i>
+      <i style="--a:142deg; --d:106px; --delay:.50s;">♡</i>
+    </div>
+
+    <p id="audioMessage" class="audio-message" role="status" aria-live="polite"></p>
   </section>
 
   <button id="musicToggle" class="music-toggle hidden" type="button" aria-label="Pausar o reproducir música">
     ♫
   </button>
 
-  <!-- Hojas/pétalos discretos volando -->
+  <!-- Pétalos de rosas blancas y corazones cayendo constantemente en toda la página -->
   <div class="petals" aria-hidden="true">
-    <!-- Pétalos blancos discretos -->
-    <span class="petal petal-white" style="--x:4%; --delay:0s; --duration:19s; --s:.72; --drift:44px;"></span>
-    <span class="petal petal-cream" style="--x:11%; --delay:2s; --duration:23s; --s:.58; --drift:-38px;"></span>
-    <span class="petal petal-white" style="--x:18%; --delay:5s; --duration:21s; --s:.66; --drift:54px;"></span>
-    <span class="petal petal-sage" style="--x:27%; --delay:1.3s; --duration:24s; --s:.52; --drift:-48px;"></span>
-    <span class="petal petal-white" style="--x:36%; --delay:3.4s; --duration:20s; --s:.75; --drift:36px;"></span>
-    <span class="petal petal-cream" style="--x:44%; --delay:6.2s; --duration:26s; --s:.60; --drift:-52px;"></span>
-    <span class="petal petal-white" style="--x:53%; --delay:1.8s; --duration:22s; --s:.70; --drift:48px;"></span>
-    <span class="petal petal-sage" style="--x:62%; --delay:4.5s; --duration:25s; --s:.54; --drift:-42px;"></span>
-    <span class="petal petal-white" style="--x:71%; --delay:.8s; --duration:21s; --s:.68; --drift:40px;"></span>
-    <span class="petal petal-cream" style="--x:80%; --delay:3s; --duration:24s; --s:.57; --drift:-46px;"></span>
-    <span class="petal petal-white" style="--x:89%; --delay:5.2s; --duration:22s; --s:.73; --drift:34px;"></span>
-    <span class="petal petal-sage" style="--x:96%; --delay:7s; --duration:27s; --s:.50; --drift:-38px;"></span>
+    <span class="petal petal-white" style="--x:4%; --delay:0s; --duration:24s; --s:.76; --drift:45px;"></span>
+    <span class="petal petal-cream" style="--x:15%; --delay:4s; --duration:28s; --s:.58; --drift:-30px;"></span>
+    <span class="petal petal-white" style="--x:28%; --delay:8s; --duration:25s; --s:.65; --drift:55px;"></span>
+    <span class="petal petal-white" style="--x:42%; --delay:2s; --duration:29s; --s:.50; --drift:-45px;"></span>
+    <span class="petal petal-cream" style="--x:55%; --delay:6s; --duration:23s; --s:.72; --drift:35px;"></span>
+    <span class="petal petal-white" style="--x:68%; --delay:10s; --duration:27s; --s:.60; --drift:-40px;"></span>
+    <span class="petal petal-white" style="--x:82%; --delay:3s; --duration:24s; --s:.80; --drift:50px;"></span>
+    <span class="petal petal-cream" style="--x:94%; --delay:7s; --duration:30s; --s:.55; --drift:-35px;"></span>
+    <span class="petal petal-white" style="--x:10%; --delay:12s; --duration:26s; --s:.65; --drift:25px;"></span>
+    <span class="petal petal-white" style="--x:75%; --delay:14s; --duration:22s; --s:.70; --drift:-25px;"></span>
 
-    <!-- Corazones pequeños y muy suaves -->
-    <span class="floating-heart" style="--x:14%; --delay:3s; --duration:18s; --s:.70;">♡</span>
-    <span class="floating-heart" style="--x:41%; --delay:7s; --duration:22s; --s:.58;">♡</span>
-    <span class="floating-heart" style="--x:69%; --delay:1s; --duration:20s; --s:.64;">♡</span>
-    <span class="floating-heart" style="--x:88%; --delay:5s; --duration:24s; --s:.52;">♡</span>
+    <span class="floating-heart" style="--x:12%; --delay:5s; --duration:24s; --s:.62; --drift:20px;">♡</span>
+    <span class="floating-heart" style="--x:35%; --delay:15s; --duration:28s; --s:.50; --drift:-15px;">♡</span>
+    <span class="floating-heart" style="--x:57%; --delay:9s; --duration:26s; --s:.55; --drift:25px;">♡</span>
+    <span class="floating-heart" style="--x:78%; --delay:2s; --duration:25s; --s:.68; --drift:-20px;">♡</span>
+    <span class="floating-heart" style="--x:92%; --delay:13s; --duration:29s; --s:.45; --drift:10px;">♡</span>
   </div>
 
-  <main id="invitation" class="invitation hidden invitation-enter">
+  <main id="invitation" class="invitation hidden gpu-layer behind-opening">
     <a class="sticky-rsvp" href="#rsvp" aria-label="Ir a confirmar asistencia">
-      Confirmar asistencia
+      Confirmar
     </a>
 
-    <!-- Portada principal -->
+    <!-- SECCIÓN 1: Portada limpia (Solo Nombres) -->
     <section class="section hero reveal">
       <div class="butterfly" aria-hidden="true">🦋</div>
       <div class="ornament top"></div>
 
-      <p class="eyebrow">¡Estás invitado!</p>
       <h2 class="couple-names">William & Belen</h2>
-      <p class="date-line">Domingo 7 de junio de 2026</p>
-
-      <div class="divider">
-        <span></span><i>✦</i><span></span>
-      </div>
-
-      <p class="hero-quote">
-        “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.”
-      </p>
 
       <div class="scroll-hint">
         <span>Desliza para ver más</span>
-        <b>⌄</b>
+        <b>↓</b>
       </div>
     </section>
 
+    <!-- SECCIÓN 2: La Foto y el texto principal de bienvenida -->
+    <section class="section reveal photo-section-wrapper">
+      <div class="photo-card">
+        <p class="eyebrow">¡Estás invitado!</p>
+        <p class="date-line">Domingo 7 de junio de 2026</p>
+        
+        <div class="divider">
+          <span></span><i>✦</i><span></span>
+        </div>
+
+        <p class="hero-quote">
+          “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.”
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Nuestra promesa -->
     <section class="section reveal">
       <article class="paper-card">
         <p class="section-kicker">Nuestra promesa</p>
@@ -115,10 +136,11 @@
       </article>
     </section>
 
+    <!-- Padres -->
     <section class="section reveal">
       <article class="paper-card">
         <p class="section-kicker">Con la bendición de Dios</p>
-        <h2>Y de nuestros padres</h2>
+        <h2>Y gracias a nuestros padres</h2>
 
         <div class="parents-grid">
           <div>
@@ -133,6 +155,7 @@
       </article>
     </section>
 
+    <!-- Cuenta regresiva -->
     <section class="section reveal">
       <article class="paper-card countdown-card">
         <p class="section-kicker">Falta poco para nuestro gran día</p>
@@ -149,6 +172,7 @@
       </article>
     </section>
 
+    <!-- Ubicación Ceremonia -->
     <section class="section reveal">
       <article class="paper-card location-card">
         <p class="section-kicker">Ceremonia eclesiástica</p>
@@ -156,12 +180,23 @@
         <p class="place-name">Iglesia evangélica Bilingüe Getsemaní</p>
         <p class="address">Manuel Albán y Baltazar García</p>
 
+        <div class="map-preview">
+          <iframe
+            class="map-frame"
+            title="Vista previa de la ceremonia"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Iglesia%20evang%C3%A9lica%20Biling%C3%BCe%20Getseman%C3%AD%2C%20Manuel%20Alb%C3%A1n%20y%20Baltazar%20Garc%C3%ADa&output=embed">
+          </iframe>
+        </div>
+
         <a class="secondary-button" href="https://maps.app.goo.gl/R7EVHRWNjVnXe7Sq6?g_st=aw" target="_blank" rel="noopener">
           Ver ubicación de la ceremonia
         </a>
       </article>
     </section>
 
+    <!-- Ubicación Recepción -->
     <section class="section reveal">
       <article class="paper-card location-card">
         <p class="section-kicker">Recepción</p>
@@ -169,16 +204,26 @@
         <p class="place-name">Licán</p>
         <p class="address">Calle Salasacas</p>
 
+        <div class="map-preview">
+          <iframe
+            class="map-frame"
+            title="Vista previa de la recepción"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Lic%C3%A1n%2C%20calle%20Salasacas&output=embed">
+          </iframe>
+        </div>
+
         <a class="secondary-button" href="https://maps.app.goo.gl/kEKaYC4kXqoZ3oiV7?g_st=aw" target="_blank" rel="noopener">
           Ver ubicación de la recepción
         </a>
       </article>
     </section>
 
+    <!-- Itinerario -->
     <section class="section reveal">
       <article class="paper-card">
-        <p class="section-kicker">Programa</p>
-        <h2>Itinerario</h2>
+        <h2 class="program-title">Programa</h2>
 
         <div class="timeline">
           <div class="timeline-item">
@@ -197,6 +242,7 @@
       </article>
     </section>
 
+    <!-- Confirmación -->
     <section id="rsvp" class="section reveal">
       <article class="paper-card rsvp-card">
         <p class="section-kicker">Confirmación</p>
@@ -226,6 +272,7 @@
       </article>
     </section>
 
+    <!-- Calendario -->
     <section class="section reveal">
       <article class="paper-card calendar-card">
         <p class="section-kicker">Guarda la fecha</p>
@@ -244,6 +291,7 @@
       </article>
     </section>
 
+    <!-- Despedida -->
     <section class="section final-section reveal">
       <article class="paper-card final-card">
         <p class="section-kicker">Con mucho cariño</p>

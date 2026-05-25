@@ -1,17 +1,26 @@
-INVITACIÓN WILLIAM & BELEN - ZOOM SUAVE Y PÉTALOS
-==================================================
+INVITACIÓN WILLIAM & BELEN - AJUSTES MÍNIMOS
+=========================================
 
-Cambios de esta versión:
-- Apertura más suave: la carta se abre, se desvanece y entra con zoom ligero.
-- Ya no hay zoom fuerte a pantalla completa.
-- El final de la foto principal tiene un difuminado más largo y natural.
-- El texto de la portada ahora tiene mejor contraste para que no se pierda con el fondo.
-- Se agregaron pétalos blancos discretos inspirados en la referencia enviada.
-- Se agregaron pequeños corazones flotando de manera suave.
-- Las entradas al hacer scroll son más finas y menos bruscas.
+Esta versión mantiene intacta la animación inicial y solo aplica los cambios solicitados:
 
-CÓMO PROBAR
------------
-1. Descomprime el ZIP.
-2. Abre index.html en Chrome.
-3. Presiona "Abrir invitación".
+1. La flecha de "Desliza para ver más" ahora es una flecha hacia abajo.
+2. Se cambió el texto de padres a:
+   - Con la bendición de Dios
+   - Y gracias a nuestros padres
+3. Se agregó una vista previa de Google Maps en:
+   - Ceremonia eclesiástica
+   - Recepción
+4. La sección del programa ahora muestra solo el título "Programa".
+5. Se mantienen pétalos y corazones flotando durante el recorrido.
+
+Para usar:
+- Abre index.html en tu navegador.
+- Si lo vas a publicar en GitHub Pages, sube los archivos descomprimidos.
+
+
+Cambios finales:
+- Los pétalos y corazoncitos empiezan a volar 1.5 segundos después de abrir la invitación.
+- No se modificó la animación inicial.
+
+
+Corrección final: ahora las flores y corazones tienen contenedor fijo y animación visible después de abrir.

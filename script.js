@@ -1,11 +1,13 @@
 /*
   Invitación William & Belen
-  JavaScript puro
+  Entrada reconstruida con secuencia cinematográfica
 */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const OPENING_DURATION = 4300;
+  const HERO_REVEAL_DELAY = 320;
+
   const intro = document.getElementById("intro");
-  const envelope = document.getElementById("envelope");
   const openButton = document.getElementById("openInvitation");
   const invitation = document.getElementById("invitation");
   const bgMusic = document.getElementById("bgMusic");
@@ -25,12 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const weddingDate = new Date("2026-06-07T10:00:00-05:00");
 
+  let hasOpened = false;
+
   function openInvitation() {
-    envelope.classList.add("open");
-    intro.classList.add("opening");
+    if (hasOpened) return;
+    hasOpened = true;
+
+    // 1. La invitación entra detrás desde el primer instante.
     invitation.classList.remove("hidden");
-    openButton.disabled = true;
-    audioMessage.textContent = "Abriendo invitación...";
+    invitation.classList.add("behind-opening");
+    invitation.classList.remove("ready");
+
+    // Forzar que el navegador registre el estado inicial antes de animar.
+    requestAnimationFrame(() => {
+      intro.classList.add("opening");
+      invitation.classList.add("opening-live");
+      openButton.disabled = true;
+      audioMessage.textContent = "Abriendo invitación...";
+    });
 
     bgMusic.volume = 0.72;
     const playPromise = bgMusic.play();
@@ -47,14 +61,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    setTimeout(() => {
+    // 2. La portada ya está visible y se aclara mientras la carta se abre.
+    window.setTimeout(() => {
+      invitation.classList.add("ready");
+      document.querySelector(".hero")?.classList.add("visible");
+    }, HERO_REVEAL_DELAY);
+
+    // 3. El intro desaparece solo cuando ya no se nota el cambio.
+    window.setTimeout(() => {
+      intro.classList.add("finished");
+    }, OPENING_DURATION - 420);
+
+    window.setTimeout(() => {
       intro.classList.add("hidden");
       musicToggle.classList.remove("hidden");
       document.body.classList.remove("intro-active");
+      invitation.classList.remove("behind-opening", "opening-live");
+      invitation.classList.add("ready");
       window.scrollTo({ top: 0, behavior: "smooth" });
-      document.querySelector(".hero")?.classList.add("visible");
       observeRevealElements();
-    }, 1650);
+      window.setTimeout(() => {
+        document.body.classList.add("petals-active");
+        console.log("petals-active on");
+      }, 1500);
+    }, OPENING_DURATION);
   }
 
   openButton.addEventListener("click", openInvitation);
@@ -79,20 +109,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        const target = entry.target;
+
         if (entry.isIntersecting) {
-          const pending = Array.from(revealElements).filter((el) => !el.classList.contains("visible"));
-          const index = Math.max(0, pending.indexOf(entry.target));
-          entry.target.style.transitionDelay = `${Math.min(index * 75, 225)}ms`;
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          target.style.transitionDelay = target.dataset.delay || "0ms";
+          target.classList.add("visible");
+          return;
+        }
+
+        // Re-activa suavemente solo si el elemento queda bastante abajo.
+        if (entry.boundingClientRect.top > window.innerHeight * 1.12) {
+          target.classList.remove("visible");
+          target.style.transitionDelay = "0ms";
         }
       });
     }, {
-      threshold: 0.22,
-      rootMargin: "0px 0px -8% 0px"
+      threshold: 0.16,
+      rootMargin: "0px 0px -10% 0px"
     });
 
-    revealElements.forEach((element) => observer.observe(element));
+    revealElements.forEach((element, index) => {
+      element.dataset.delay = `${Math.min(index * 36, 144)}ms`;
+      observer.observe(element);
+    });
   }
 
   function pad(value) {
