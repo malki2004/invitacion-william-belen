@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Invitación de boda de William Paredes y Belen Toasa" />
-  <title>Invitación William & Belen</title>
+  <meta name="description" content="Invitación de boda de William Paredes y Belén Toasa" />
+  <title>Invitación William & Belén</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,6 @@
 <body class="intro-active">
   <audio id="bgMusic" src="assets/musica.mp3" loop preload="auto"></audio>
 
-  <!-- Entrada con animación sincronizada y sobre minimalista -->
   <section id="intro" class="intro-screen" aria-label="Abrir invitación">
     <div class="intro-hero-preview" aria-hidden="true"></div>
     <div class="opening-blur" aria-hidden="true"></div>
@@ -34,7 +33,6 @@
       <div class="date-mark">07 · 06 · 2026</div>
     </div>
 
-    <!-- Botón con la instrucción en español -->
     <button id="openInvitation" class="wax-button" type="button" aria-label="Abrir invitación">
       <span>WB</span>
       <small>Presiona el sello rojo</small>
@@ -69,7 +67,6 @@
     ♫
   </button>
 
-  <!-- Pétalos de rosas blancas y corazones cayendo constantemente en toda la página -->
   <div class="petals" aria-hidden="true">
     <span class="petal petal-white" style="--x:4%; --delay:0s; --duration:24s; --s:.76; --drift:45px;"></span>
     <span class="petal petal-cream" style="--x:15%; --delay:4s; --duration:28s; --s:.58; --drift:-30px;"></span>
@@ -90,16 +87,23 @@
   </div>
 
   <main id="invitation" class="invitation hidden gpu-layer behind-opening">
-    <a class="sticky-rsvp" href="#rsvp" aria-label="Ir a confirmar asistencia">
-      Confirmar
-    </a>
-
-    <!-- SECCIÓN 1: Portada limpia (Solo Nombres) -->
+    
     <section class="section hero reveal">
       <div class="butterfly" aria-hidden="true">🦋</div>
       <div class="ornament top"></div>
 
-      <h2 class="couple-names">William & Belen</h2>
+      <div class="couple-names-container hero-couple-layout">
+        <img src="assets/anillo.png" alt="Anillo" class="ring-image">
+        <div class="hero-name-block hero-name-left">
+          <h2 class="couple-names">William</h2>
+          <span class="surname">Paredes Yautibug</span>
+        </div>
+        <h2 class="couple-names ampersand ampersand-pop">&amp;</h2>
+        <div class="hero-name-block hero-name-right">
+          <h2 class="couple-names">Belén</h2>
+          <span class="surname">Toasa Tene</span>
+        </div>
+      </div></div>
 
       <div class="scroll-hint">
         <span>Desliza para ver más</span>
@@ -107,59 +111,57 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: La Foto y el texto principal de bienvenida -->
     <section class="section reveal photo-section-wrapper">
       <div class="photo-card">
-        <p class="eyebrow">¡Estás invitado!</p>
-        <p class="date-line">Domingo 7 de junio de 2026</p>
+        <p class="eyebrow motion-up">¡Estás invitado!</p>
+        <p class="date-line motion-up">Domingo 7 de junio de 2026</p>
         
         <div class="divider">
           <span></span><i>✦</i><span></span>
         </div>
 
-        <p class="hero-quote">
-          “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.”
+        <p class="hero-quote line-stagger-up">
+          <span class="line-unit">“Con Dios en el centro de nuestro amor,</span>
+          <span class="line-unit">comenzamos nuestro para siempre.”</span>
         </p>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: Nuestra promesa -->
     <section class="section reveal">
       <article class="paper-card">
-        <p class="section-kicker">Nuestra promesa</p>
-        <h2>¡El día ha llegado!</h2>
-        <p class="quote">
-          “Con Dios en el centro de nuestro amor, comenzamos nuestro para siempre.
-          Acompáñanos a celebrar esta promesa eterna.”
+        <p class="section-kicker motion-up">Nuestra promesa</p>
+        <h2 class="soft-mask-reveal" style="--mask-duration:1.05s; --mask-delay:.16s;">¡El día ha llegado!</h2>
+        <p class="quote line-stagger-up">
+          <span class="line-unit">“Con Dios en el centro de nuestro amor,</span>
+          <span class="line-unit">comenzamos nuestro para siempre.</span>
+          <span class="line-unit">Acompáñanos a celebrar esta promesa eterna.”</span>
         </p>
         <p class="soft-text">Gracias por su presencia.</p>
       </article>
     </section>
 
-    <!-- Padres -->
     <section class="section reveal">
       <article class="paper-card">
-        <p class="section-kicker">Con la bendición de Dios</p>
-        <h2>Y gracias a nuestros padres</h2>
+        <p class="section-kicker soft-mask-reveal" style="--mask-duration:1s; --mask-delay:.08s;">Con la bendición de Dios</p>
+        <h2 class="soft-mask-reveal" style="--mask-duration:1.1s; --mask-delay:.22s;">Y gracias a nuestros padres</h2>
 
-        <div class="parents-grid">
-          <div>
-            <h3>Padres de la novia</h3>
-            <p>Pedro Toasa Ganan<br>Manuela Ilvis Guamán</p>
-          </div>
+        <div class="parents-grid motion-group">
           <div>
             <h3>Padres del novio</h3>
-            <p>Bernardo Paredes y Elena Yautibug</p>
+            <p>Bernardo Paredes<br>Elena Yautibug</p>
+          </div>
+          <div>
+            <h3>Padres de la novia</h3>
+            <p>Pedro Toasa<br>Manuela Ilvis</p>
           </div>
         </div>
       </article>
     </section>
 
-    <!-- Cuenta regresiva -->
     <section class="section reveal">
-      <article class="paper-card countdown-card">
-        <p class="section-kicker">Falta poco para nuestro gran día</p>
-        <h2>Cuenta regresiva</h2>
+      <article class="paper-card countdown-card countdown-combined">
+        <p class="section-kicker motion-up">Falta poco para nuestro gran día</p>
+        <h2 class="motion-up">Cuenta regresiva</h2>
 
         <div id="countdown" class="countdown" aria-live="polite">
           <div><strong id="days">00</strong><span>Días</span></div>
@@ -172,12 +174,11 @@
       </article>
     </section>
 
-    <!-- Ubicación Ceremonia -->
     <section class="section reveal">
       <article class="paper-card location-card">
-        <p class="section-kicker">Ceremonia eclesiástica</p>
+        <p class="section-kicker motion-up">Ceremonia eclesiástica</p>
         <h2>10:00 a. m.</h2>
-        <p class="place-name">Iglesia evangélica Bilingüe Getsemaní</p>
+        <p class="place-name soft-mask-reveal" style="--mask-duration:1.2s; --mask-delay:.18s;">Iglesia evangélica Bilingüe Getsemaní</p>
         <p class="address">Manuel Albán y Baltazar García</p>
 
         <div class="map-preview">
@@ -186,22 +187,20 @@
             title="Vista previa de la ceremonia"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Iglesia%20evang%C3%A9lica%20Biling%C3%BCe%20Getseman%C3%AD%2C%20Manuel%20Alb%C3%A1n%20y%20Baltazar%20Garc%C3%ADa&output=embed">
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.167389814275!2d-78.674658!3d-1.663931!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3a824cb77953b%3A0xc665b169ef814d48!2s1%C2%B039&#39;50.2%22S%2078%C2%B040&#39;28.8%22W!5e0!3m2!1ses!2sec!4v1716258000000!5m2!1ses!2sec">
           </iframe>
         </div>
-
-        <a class="secondary-button" href="https://maps.app.goo.gl/R7EVHRWNjVnXe7Sq6?g_st=aw" target="_blank" rel="noopener">
+<a class="secondary-button" href="https://maps.app.goo.gl/LLmoRmxMQ16yr53t5?g_st=aw" target="_blank" rel="noopener">
           Ver ubicación de la ceremonia
         </a>
       </article>
     </section>
 
-    <!-- Ubicación Recepción -->
     <section class="section reveal">
       <article class="paper-card location-card">
-        <p class="section-kicker">Recepción</p>
+        <p class="section-kicker motion-up">Recepción</p>
         <h2>12:00 p. m.</h2>
-        <p class="place-name">Licán</p>
+        <p class="place-name soft-mask-reveal" style="--mask-duration:.9s; --mask-delay:.16s;">Licán</p>
         <p class="address">Calle Salasacas</p>
 
         <div class="map-preview">
@@ -220,7 +219,6 @@
       </article>
     </section>
 
-    <!-- Itinerario -->
     <section class="section reveal">
       <article class="paper-card">
         <h2 class="program-title">Programa</h2>
@@ -242,37 +240,6 @@
       </article>
     </section>
 
-    <!-- Confirmación -->
-    <section id="rsvp" class="section reveal">
-      <article class="paper-card rsvp-card">
-        <p class="section-kicker">Confirmación</p>
-        <h2>Confirma tu asistencia</h2>
-        <p class="soft-text">
-          Puedes confirmar por WhatsApp o completar el formulario.
-        </p>
-
-        <form id="rsvpForm" class="rsvp-form">
-          <label for="guestName">Nombre del invitado</label>
-          <input id="guestName" name="guestName" type="text" placeholder="Escribe tu nombre" autocomplete="name" />
-
-          <label for="attendance">Asistencia</label>
-          <select id="attendance" name="attendance">
-            <option value="si">Sí asistiré</option>
-            <option value="no">No podré asistir</option>
-          </select>
-
-          <button id="whatsappButton" class="primary-button full" type="button">
-            Confirmar por WhatsApp
-          </button>
-        </form>
-
-        <a class="secondary-button full" href="https://docs.google.com/forms/d/e/1FAIpQLSc_BNe9yZtIQoZorNMut1ovaWelG_Pg1zuAOzVHahkxKIkb1Q/viewform?usp=header" target="_blank" rel="noopener">
-          Confirmar en formulario
-        </a>
-      </article>
-    </section>
-
-    <!-- Calendario -->
     <section class="section reveal">
       <article class="paper-card calendar-card">
         <p class="section-kicker">Guarda la fecha</p>
@@ -291,13 +258,14 @@
       </article>
     </section>
 
-    <!-- Despedida -->
     <section class="section final-section reveal">
-      <article class="paper-card final-card">
+     <article class="paper-card final-card">
         <p class="section-kicker">Con mucho cariño</p>
-        <h2 class="couple-names small">William & Belen</h2>
+        <div class="final-names-container">
+          <h2 class="couple-names small">William &amp; Belén</h2>
+        </div>
         <p class="quote">Esperamos compartir este momento contigo.</p>
-        <p class="soft-text">William Paredes y Belen Toasa</p>
+        <p class="soft-text">William Paredes y Belén Toasa</p>
       </article>
     </section>
   </main>

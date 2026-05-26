@@ -1,26 +1,19 @@
-INVITACIÓN WILLIAM & BELEN - AJUSTES MÍNIMOS
-=========================================
+INVITACIÓN WILLIAM & BELÉN - ANIMACIONES REFINADAS
+===============================================
 
-Esta versión mantiene intacta la animación inicial y solo aplica los cambios solicitados:
+Se conservaron textos, información, música e imágenes.
+Ajustes realizados:
 
-1. La flecha de "Desliza para ver más" ahora es una flecha hacia abajo.
-2. Se cambió el texto de padres a:
-   - Con la bendición de Dios
-   - Y gracias a nuestros padres
-3. Se agregó una vista previa de Google Maps en:
-   - Ceremonia eclesiástica
-   - Recepción
-4. La sección del programa ahora muestra solo el título "Programa".
-5. Se mantienen pétalos y corazones flotando durante el recorrido.
+1. Los nombres principales vuelven al estilo original (centrados y sin amontonarse).
+2. William entra suavemente desde la izquierda.
+3. Belén entra suavemente desde la derecha.
+4. El ampersand (&) aparece de pequeño a grande en el centro.
+5. Se quitó el cursor/palito de todas las animaciones.
+6. Algunos textos aparecen de abajo hacia arriba al hacer scroll.
+7. Otras secciones aparecen con una máscara suave de izquierda a derecha, sin mover el texto.
+8. Las frases largas salen línea por línea, una debajo de otra.
+9. Pétalos y corazones siguen apareciendo desde la apertura.
 
-Para usar:
-- Abre index.html en tu navegador.
-- Si lo vas a publicar en GitHub Pages, sube los archivos descomprimidos.
-
-
-Cambios finales:
-- Los pétalos y corazoncitos empiezan a volar 1.5 segundos después de abrir la invitación.
-- No se modificó la animación inicial.
-
-
-Corrección final: ahora las flores y corazones tienen contenedor fijo y animación visible después de abrir.
+Uso:
+- Descomprime el ZIP.
+- Abre index.html.
